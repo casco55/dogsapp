@@ -57,7 +57,7 @@ export const Gallery = ({item, images}) => {
             </div>
 
             {selectedPicture !== '' &&
-                <div className="fixed-top bg-light col-lg-12 pb-5 d-flex flex-column h-100">
+                <div className="fixed-top bg-light col-lg-12 pb-5 d-flex flex-column h-100 over">
                     <div className="mr-0 ml-auto">
                             <i className="far fa-times-circle fa-3x" onClick={ () => setValues(initialState) }></i>
                         </div>        
