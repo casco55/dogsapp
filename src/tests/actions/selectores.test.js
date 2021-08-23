@@ -3,8 +3,8 @@ import thunk from 'redux-thunk';
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares);
 
-import { chargeAllBreeds, getAllBreeds, getItemImages, removeFilterItem } from "../../../actions/selectores"
-import { types } from "../../../types/types";
+import { chargeAllBreeds, getAllBreeds, getItemImages, removeFilterItem } from "../../actions/selectores"
+import { types } from "../../types/types";
 
 const store = mockStore({
     list: {
