@@ -9,7 +9,7 @@ export const Gallery = ({item, images}) => {
 
     const [values, setValues] = useState(initialState);
     const { selectedPicture } = values;
-    console.log(selectedPicture);
+   
 
     const scrollLeft = () => {
         const container = document.getElementById(item);
@@ -39,8 +39,8 @@ export const Gallery = ({item, images}) => {
 
     return (
         <>
-            <h5 className="mt-3 ml-2">{item}:</h5>
-            <div className="d-flex col-12">
+            <h3 className="mt-3 ml-2">{item}:</h3>
+            <div className="d-flex col-12 border-top border-bottom border-dark">
                 <i className="d-none d-md-block fas fa-2x fa-angle-left my-auto" onClick={ scrollLeft }></i>
                 <div className="d-flex flex-row overflow-y my-2 mx-md-2" id={item}>
                     {images.length > 0 && 

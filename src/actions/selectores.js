@@ -17,9 +17,9 @@ export const getAllBreeds = () => async dispatch =>{
             optionsList.push({'value': key, 'label': key});
             if(value.length > 0){
                 value.forEach((val) => {
-                    const subBreedValue = key + ' ' + val;
-                    const subBreedLabel = val + ' ' + key;
-                    optionsList.push({'value': subBreedValue, 'label': subBreedLabel});
+                    const subBreed = key + ' ' + val;
+                    
+                    optionsList.push({'value': subBreed, 'label': subBreed});
                 })
                 
             }

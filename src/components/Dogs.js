@@ -16,25 +16,27 @@ export const Dogs = () => {
     const { searchList } = useSelector(state => state.list);
     
     return (
-        <div>
-            {optionsList !== undefined && 
-                <Header optionsList={optionsList} />
-            } 
+        <>
+            <div className="sticky-top">
+                {optionsList !== undefined && 
+                    <Header optionsList={optionsList} />
+                } 
+                {searchList.length > 0 && 
+                    <div className="d-flex flex-row sticky-top overflow-y bg-light">
+                        {searchList.map((item) => (
+                            <FilterItem key={item.breed} item={item.breed} />
+                        ))}
+                    </div>
+                }
+            </div>
             {searchList.length > 0 && 
-                <div className="d-flex flex-row sticky-top overflow-y bg-light">
-                    {searchList.map((item) => (
-                        <FilterItem key={item.breed} item={item.breed} />
-                    ))}
-                </div>
-            }
-            {searchList.length > 0 && 
-                <div className="d-flex flex-column mt-3 overflow-auto">
+                <div className="d-flex flex-column mt-3 overflow-auto ">
                     {searchList.map((item) => (
                         <Gallery key={item.breed} item={item.breed} images={item.images} />
                     ))}
                 </div>
             }
             
-        </div>
+        </>
     )
 }

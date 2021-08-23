@@ -3,8 +3,11 @@ import React from 'react';
 export const SinglePicture = ({item, selectedPicture}) => {
     return (
         <>
-            <h3 className="text-center">{item}</h3>
-            <img src={selectedPicture} alt="Imagen de raza" className="img-fluid h-75 mx-auto" />
+            <div className="container-fluid d-flex flex-column">
+                <h3 className="text-center d-md-none mt-1 mt-md-2">{item}</h3>
+                <h2 className="text-center d-none d-md-block mt-1 mt-md-2">{item}</h2>
+                <img src={selectedPicture} alt="Imagen de raza" className="img-fluid h-75 mx-auto my-auto" />
+            </div>
         </>
     )
 }
