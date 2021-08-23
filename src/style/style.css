@@ -34,16 +34,6 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap');
-h2{
-    font-family: 'Klee One', cursive
-}
-
-h3{
-    font-family: 'Klee One', cursive
-}
-p{
-    font-family: 'Klee One', cursive
-}
-.texto{
+h2, h3, p, .texto{
     font-family: 'Klee One', cursive
 }
