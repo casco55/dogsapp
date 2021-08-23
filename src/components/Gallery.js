@@ -14,10 +14,10 @@ export const Gallery = ({item, images}) => {
     const scrollLeft = () => {
         const container = document.getElementById(item);
                 let scrollAmount = 0;
-                var slideTimer = setInterval(function(){
+                let slideTimer = setInterval(function(){
                     container.scrollLeft -= 100;
                     scrollAmount += 10;
-                    if(scrollAmount >= 80){
+                    if(scrollAmount >= 100){
                         window.clearInterval(slideTimer);
                     }
                 }, 50);
@@ -26,10 +26,10 @@ export const Gallery = ({item, images}) => {
     const scorllRight = () => {
         const container = document.getElementById(item);
                 let scrollAmount = 0;
-                var slideTimer = setInterval(function(){
+                let slideTimer = setInterval(function(){
                     container.scrollLeft += 100;
                     scrollAmount += 10;
-                    if(scrollAmount >= 80){
+                    if(scrollAmount >= 100){
                         window.clearInterval(slideTimer);
                     }
                 }, 50);

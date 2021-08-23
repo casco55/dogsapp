@@ -12,8 +12,8 @@ export const Dogs = () => {
     useEffect(() => {
         dispatch( getAllBreeds() );
     }, [dispatch]);
-    const { optionsList } = useSelector(state => state.list);
-    const { searchList } = useSelector(state => state.list);
+    const { optionsList, searchList } = useSelector(state => state.list);
+    
 
     
     
