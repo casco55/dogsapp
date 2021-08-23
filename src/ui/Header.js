@@ -14,7 +14,7 @@ const handleChangeOption = e => {
 
 
     return (
-        <div className="d-flex py-2 px-md-3 bg-dark justify-content-between ">
+        <div className="d-flex py-2 mb-2 px-md-3 bg-dark justify-content-between ">
             <div className="ml-1 rounded-circle bg-light px-2 py-2"><i className="fas fa-2x fa-dog"></i></div>
             <div className="col-10 col-md-6 d-flex justify-content-end text-light">
                <p className="my-auto mr-md-1">Buscar Raza:</p>
