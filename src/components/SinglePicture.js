@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const SinglePicture = ({item, selectedPicture}) => {
     return (
@@ -12,3 +13,7 @@ export const SinglePicture = ({item, selectedPicture}) => {
     )
 }
 
+SinglePicture.propTypes = {
+    item: PropTypes.string.isRequired,
+    selectedPicture: PropTypes.string.isRequired,
+}

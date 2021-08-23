@@ -3,18 +3,15 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 
-const urlGetAll = 'https://dog.ceo/api/breeds/list/all';
+
+
 export const getAllBreeds = () => async dispatch =>{
-    const config = {
-        method: 'get',
-        url: urlGetAll,
-        headers: { }
-      };
-      const optionsList = [];
-      axios(config)
-      .then(function (response) {   
-            
-                const dogsBreedsList = response.data.message;
+    const urlGetAll = 'https://dog.ceo/api/breeds/list/all';
+    const optionsList = [];
+
+    try {
+        const respuesta = await axios.get(urlGetAll);
+        const dogsBreedsList = respuesta.data.message;
                 Object.entries(dogsBreedsList).forEach(([key, value]) => {
                     optionsList.push({'value': key, 'label': key});
                     if(value.length > 0){
@@ -26,14 +23,15 @@ export const getAllBreeds = () => async dispatch =>{
                         
                     }
                 });
-                dispatch( chargeAllBreeds(optionsList) );   
-        
-      })
-      .catch(function (error) {
+                dispatch( chargeAllBreeds(optionsList) );
+    } catch (error) {
         Swal.fire('Error al conectar al servidor')
         optionsList.push({'value': '', 'label': ''});
         dispatch( chargeAllBreeds(optionsList) );
-      });
+    }   
+        
+        
+    
     }
 
 export const chargeAllBreeds = (optionsList) => {
@@ -47,22 +45,18 @@ export const chargeAllBreeds = (optionsList) => {
 
 export const getItemImages = (addItem) =>async dispatch =>{
     const addItemUrl = addItem.replace(" ", "/")
-    
-    const config = {
-        method: 'get',
-        url: `https://dog.ceo/api/breed/${addItemUrl}/images`,
-        headers: { }
-      };
-      axios(config)
-      .then(function (response) {
-        const imageList = response.data.message;
+    try {
+        const respuesta = await axios.get(`https://dog.ceo/api/breed/${addItemUrl}/images`);
+        const imageList = respuesta.data.message;
        
         dispatch( fillList(addItem, imageList) );
-      })
-      .catch(function (error) {
+    } catch (error) {
         Swal.fire('Error al conectar al servidor');
-      });
+    }    
+      
+        
 }
+     
 
 export const fillList = ( addItem, imageList ) => {
     const breedImages = {'breed': addItem, 'images': imageList};
