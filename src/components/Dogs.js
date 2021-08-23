@@ -24,7 +24,7 @@ export const Dogs = () => {
                         <Header optionsList={optionsList} />
                     } 
                     {searchList.length > 0 && 
-                        <div className="d-flex flex-row sticky-top overflow-y bg-light">
+                        <div className="d-flex flex-row sticky-top overflow-y bg-light py-2">
                             {searchList.map((item) => (
                                 <FilterItem key={item.breed} item={item.breed} />
                             ))}
